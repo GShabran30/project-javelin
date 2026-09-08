@@ -45,7 +45,7 @@
             @endforeach
         </tbody>
     </table>
-        <div class="bg-teal-700 text-white rounded-lg px-2 mt-4">
+        <div class="bg-teal-700 text-white rounded-lg px-2 mt-4 w-fit">
             Total amount of Money : {{Number::currency($totals, in: 'IDR')}}
         </div>
 
