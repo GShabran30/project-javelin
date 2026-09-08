@@ -15,6 +15,7 @@ Route::get('/', function () {
 
 // Vault
 Route::get('/vault',[VaultController::class, 'index']);
+Route::post('/vault',[VaultController::class, 'store']);
 
 // spearhead
 Route::get('/spearhead',[StudySessionController::class,'index']);
