@@ -40,7 +40,7 @@
             <tr>
                 <td class="px-4 py-2">{{$entry->bucket_name}}</td>
                 <td class="px-4 py-2">{{number_format($entry->amount)}}</td>
-                <td class="px-4 py-2">{{$entry->month}}</td>
+                <td class="px-4 py-2">{{ \Carbon\Carbon::parse($entry->month)->format('F Y') }}</td>
             </tr>
             @endforeach
         </tbody>
