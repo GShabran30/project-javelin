@@ -9,7 +9,8 @@ class VaultController extends Controller
 {
     public function index(){
         $entries = BudgetEntry::all();
-        return view('vault',['entries' => $entries]);
+        $totals = BudgetEntry::sum('amount');
+        return view('vault',['entries' => $entries, 'totals' => $totals]);
     }
 
     public function store(Request $request){
