@@ -9,7 +9,7 @@ class ContentPostController extends Controller
 {
     public function index(){
         $sessions = ContentPost::all();
-        return view('content',['sessions' => $sessions]);
+        return view('signalflare',['sessions' => $sessions]);
     }
 
     public function store(Request $request){
