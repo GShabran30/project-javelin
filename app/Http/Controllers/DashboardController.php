@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\BudgetEntry;
 use App\Models\StudySession;
 use App\Models\ContentPost;
@@ -13,12 +12,14 @@ class DashboardController extends Controller
 {
     public function index(){
         return view('dashboard', [
-            'budgets'  => BudgetEntry::all(),
-            'sessions' => StudySession::all(),
-            'posts'    => ContentPost::all(),
-            'issues'   => IssueLog::all(),
-            'tools'    => ForgeTool::all(),
+            'lastBudgets'  => BudgetEntry::latest()->first(),
+            'totalBudgets' => BudgetEntry::sum('amount'),
+            'lastSessions' => StudySession::latest()->first(),
+            'lastPosts'    => ContentPost::latest()->first(),
+            'lastIssues'   => IssueLog::latest()->first(),
+            'lastTools'    => ForgeTool::latest()->first(),
         ]);
     }
+
     //
 }

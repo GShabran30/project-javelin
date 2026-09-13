@@ -21,7 +21,6 @@ class IssueLogController extends Controller
         ]);
 
         IssueLog::create($validated);
-
         return redirect('/ironcore');
     }
     //
